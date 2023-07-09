@@ -13,5 +13,15 @@ public class _03_Variables {
         name = "강백호";
         System.out.println(name + "님의 평균 점수는 " + score + "점입니다.");
         System.out.println(name + "님의 학점은 " + grade + "입니다.");
+
+        boolean pass = true;
+
+        System.out.println("이번 시험에 합격했을까요? " + pass);
+
+        double d = 3.14;
+        float f = 3.14f;
+
+        System.out.println(d);
+        System.out.println(f);
     }
 }
