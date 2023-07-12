@@ -1,4 +1,4 @@
-public class AccountingIFApp {
+public class AccountingArrayApp {
     public static void main(String[] args) {
         double valueOfSupply = Double.parseDouble(args[0]);
         double vatRate = 0.1;
@@ -8,15 +8,9 @@ public class AccountingIFApp {
         double expense = valueOfSupply*expenseRate;
         double income = valueOfSupply-expense;
 
-        if (income<=10000.0){
-            double dividend1 = income * 1;
-            double dividend2 = income * 0;
-            double dividend3 = income * 0;
-        }else{
-            double dividend1 = income * 0.5;
-            double dividend2 = income * 0.3;
-            double dividend3 = income * 0.2;
-        }
+        double dividend1 = income * 1;
+        double dividend2 = income * 0;
+        double dividend3 = income * 0;
 
 
         System.out.println("Value of supply : "+valueOfSupply);
