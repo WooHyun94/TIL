@@ -1,4 +1,4 @@
-public class AccountingMethodApp {
+public class AccountingClassApp {
     public static double valueOfSupply = 10000.0;
     public static double vatRate = 0.1;
     public static void main(String[] args) {
