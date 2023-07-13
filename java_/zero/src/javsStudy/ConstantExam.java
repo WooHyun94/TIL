@@ -5,7 +5,7 @@ public class ConstantExam {
 		int i = 0;
 		i = 10; 
 		i = 5;
-		
+		System.out.println(i);
 		final int J;
 		J = 10; 
 		
