@@ -2,7 +2,7 @@ package javsStudy;
 
 public class ConstantExam {
 	public static void main(String[] args) {
-		int i;
+		int i = 0;
 		i = 10; 
 		i = 5;
 		
