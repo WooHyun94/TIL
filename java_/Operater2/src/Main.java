@@ -64,6 +64,11 @@ public class Main {
         result = numA >>> 1;
         System.out.printf("%s\n", Integer.toBinaryString(numA));
         System.out.printf("%s\n", Integer.toBinaryString(result));
+
+        String str = "1233456789";
+
+        System.out.println(str.substring(0, 2));
+        System.out.println(str.substring(0, 10));
     }
 
 }
