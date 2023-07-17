@@ -1,5 +1,5 @@
 // Java 프로그래밍 - 여러가지 연산자_2
-
+import java.util.*;
 public class Main {
     public static void main(String[] args) {
 
@@ -69,6 +69,11 @@ public class Main {
 
         System.out.println(str.substring(0, 2));
         System.out.println(str.substring(0, 10));
+
+        int[] arr = {1, 2, 3, 4, 5};
+        arr = Arrays.copyOfRange(arr, 4, arr.length);
+        System.out.println(arr);
+        System.out.println(arr[0]);
     }
 
 }
