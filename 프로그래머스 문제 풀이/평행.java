@@ -9,6 +9,7 @@ class Solution {
             if (((double)(dots[0][0] - dots[i][0]) / (double)(dots[0][1] - dots[i][1]))
                == ((double)(dots[array.get(0)][0] - dots[array.get(1)][0]) / (double)(dots[array.get(0)][1] - dots[array.get(1)][1]))) return 1;
             array.add(i);
+            
         }
         
         return answer;
