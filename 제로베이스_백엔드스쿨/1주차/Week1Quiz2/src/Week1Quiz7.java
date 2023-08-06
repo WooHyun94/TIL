@@ -20,9 +20,9 @@ public class Week1Quiz7 {
         n = Integer.parseInt(sc.nextLine());
         arr = new String[n][6];
         count = new int[n];
-        for(int i = 0; i < 6; i++){
+        for(int i = 0; i < n; i++){
             shuffle(arr[i]);
-            System.out.print(String.format("%c\t%s", i + 65, String.join(",", arr[i])));
+            System.out.print(String.format("%c\t%s\n", i + 65, String.join(",", arr[i])));
         }
         shuffle(result);
         System.out.printf("\n[로또 발표]\n \t%s\n\n", String.join(",", result));
@@ -44,15 +44,16 @@ public class Week1Quiz7 {
         al.sort(Comparator.naturalOrder());
 
         for (int i = 0; i < 6; i++){
-            arr[i] = Integer.toString(al.get(i));
+            arr[i] = String.format("%02d", al.get(i));
         }
         al.clear();
     }
     public static void check(String[][] data, String[] target, int[] count){
-        al = (ArrayList)Arrays.asList(target);
+        ArrayList<String> arr = new ArrayList<>();
+        for (String s : target) arr.add(s);
         for (int i = 0; i < data.length; i++){
             for(String s : data[i]){
-                if(al.contains(s)) count[i]++;
+                if(arr.contains(s)) count[i]++;
             }
         }
     }
