@@ -51,7 +51,7 @@ class LinkedList{
         while(cur.next != null){
             prev = cur;
             cur = cur.next;
-        }
+        } 
         if(cur == this.head){
             this.head = null;
         }else{
