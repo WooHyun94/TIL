@@ -1,35 +1,53 @@
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.Arrays;
+import java.util.*;
+import java.util.LinkedList;
 
-public class Main {
-    public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int N = Integer.parseInt(br.readLine());
+class Main {
+    public static int size = 0;
+    public static boolean[] visited;
+    public static int[] parent;
+    public static ArrayList<Integer>[] list;
 
-        int[] names = new int[N];
-        for (int i = 0; i < N; i++) {
-            names[i] = Integer.parseInt(br.readLine());
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        size = Integer.parseInt(sc.nextLine());
+        visited = new boolean[size + 1];
+        visited[1] = true;
+        parent = new int[size + 1];
+        list = new ArrayList[size + 1];
+        for(int i = 0; i <= size; i++){
+            list[i] = new ArrayList<>();
         }
 
-        long[] oneBitCnt = new long[20]; // 각 자리마다 비트 1이 나온 개수를 저장할 객체
+        for (int i = 0; i < size - 1; i++){
+            String[] s = sc.nextLine().split(" ");
 
-        for (int name : names) {
-            int idx = 0;
-            while (name > 0) {
-                int bit = name % 2;
-                if (bit == 1) oneBitCnt[idx]++;
-                idx++;
-                name = name / 2;
+            int x = Integer.parseInt(s[0]);
+            int y = Integer.parseInt(s[1]);
+
+            list[x].add(y);
+            list[y].add(x);
+        }
+
+        Queue<Integer> queue = new LinkedList<>();
+        queue.offer(1);
+
+        while(!queue.isEmpty()){
+            int pa = queue.poll();
+
+            for(int su : list[pa]){
+                if(!visited[su]){
+                    parent[su] = pa;
+                    queue.offer(su);
+                    visited[su] = true;
+                }else {
+                    continue;
+                }
             }
         }
 
-        long friendly = 0;
-        for (int i = 0; i < oneBitCnt.length; i++) {
-            // 전체 인원수에서 1의 개수를 빼면 0의 개수
-            friendly += (long) (oneBitCnt[i] * (N - oneBitCnt[i])) << i;
+        for(int i = 2; i <= size; i++){
+            System.out.println(parent[i]);
         }
-        System.out.println(friendly);
     }
 }
